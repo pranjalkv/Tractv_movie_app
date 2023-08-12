@@ -1,0 +1,26 @@
+.app-mood-color
+{
+    color: var(--yellow);
+}
+
+.app-rec-para
+{
+    font-size: 32px;
+    font-weight: 600;
+    margin: 80px 0 10px 0;
+    text-align: center;
+}
+@media (max-width:1100px) and (min-width:600px)
+{
+    .app-rec-para
+    {
+        font-size: 27px;
+    }
+}
+@media (max-width:600px)
+{
+    .app-rec-para
+    {
+        font-size:16px;
+    }
+}

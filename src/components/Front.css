@@ -1,0 +1,72 @@
+.front-app
+{
+font-size: 100%;
+position: relative;
+}
+.cover
+{
+    font-size: 100%;
+    margin: 0;
+    height:70vh;
+    width: 100%;
+    min-height: 440px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-shadow: 2px 2px 3px black;
+}
+.content-api
+{
+    padding-left: 2%;
+    opacity: 0.9;
+    padding-bottom: 2%;
+    font-size: 1.1em;
+}
+.grandient-color
+{
+    height: 6vh;
+    background-image: linear-gradient(180deg ,rgba(255,255,255,0.0) ,rgba(0,0,0,0.8));
+}
+
+.content-api-error
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin: 10px;
+}
+
+@media (max-width:1024px) and (min-width:400px)
+{
+    .front-app
+    {
+        font-size: 60%;
+    }
+    .cover
+    {
+        height: 65vh;
+    }
+}
+@media (max-width:400px)
+{
+     .front-app
+    {
+        font-size: 50%;
+    }
+     .cover
+    {
+        height: 65vh;
+    }
+}
+@media (min-width:2000px)
+{
+    .front-app
+    {
+        font-size: 120%;
+    }
+}
+
+
+
