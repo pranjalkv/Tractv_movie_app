@@ -114,6 +114,7 @@ input:-webkit-autofill:active{
 {
     margin-right: 6px;
     font-size: 0.8em;
+    pointer-events: none;
 }
 @media (max-width:1024px) and (min-width:400px)
 {

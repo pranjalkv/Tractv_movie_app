@@ -9,6 +9,7 @@ import Ytvid from "./Ytvid";
 
 function Page()
 {
+    const API_KEY=import.meta.env.VITE_API_KEY
     const[vidopen,setVidopen]=useState(false)
     const{typeMed ,idapp}=useParams();
     const [filmresult, setFilmresult] = useState([])
@@ -16,9 +17,9 @@ function Page()
     const [n,setN]=useState(250)
 
 
-    const searchUrl=`https://api.themoviedb.org/3/${typeMed}/${idapp}?${API_KEY}`
-    const getCast =`https://api.themoviedb.org/3/${typeMed}/${idapp}/credits?${API_KEY}`
-    const getRowrec=`https://api.themoviedb.org/3/${typeMed}/${idapp}/recommendations?${API_KEY}`
+    const searchUrl=`https://api.themoviedb.org/3/${typeMed}/${idapp}?api_key=${API_KEY}`
+    const getCast =`https://api.themoviedb.org/3/${typeMed}/${idapp}/credits?api_key=${API_KEY}`
+    const getRowrec=`https://api.themoviedb.org/3/${typeMed}/${idapp}/recommendations?api_key=${API_KEY}`
 
      function changetv(media)
     {
@@ -77,7 +78,6 @@ function topercent(value)
 {
    return (value*10).toFixed(2)
 }
-
     useEffect(()=>{
         async function fetchSearch()
         {
@@ -90,6 +90,8 @@ function topercent(value)
 
             return (req ,reqCast)
         }
+
+        window.scrollTo(0,0);
         fetchSearch();
     },[searchUrl])
 
@@ -126,7 +128,7 @@ function topercent(value)
             <div className="info-right">
                 <p className="movie-name">{filmresult?.title || filmresult?.name}</p>
                   <div>
-                    {filmresult["genres"]?.map((ele)=><p className="movie-genre-search"><span>{ele.name}</span></p>)} 
+                    {filmresult["genres"]?.map((ele,i)=><p className="movie-genre-search" key={i}><span>{ele.name}</span></p>)} 
                 </div>
          
                 <div className="num-info">
@@ -156,7 +158,7 @@ function topercent(value)
                 </div>}
 
                     <div className="all-cast">Cast &nbsp;
-                    {allcast?.map((ele)=><p className="comma">{ele?.name}</p>)}
+                    {allcast?.map((ele,i)=><p className="comma" key={i}>{ele?.name}</p>)}
                     </div>
                      <div>
                         <button className="play-btn" onClick={()=>setVidopen(true)}><FaPlay className="play-icon"/>PLAY</button>

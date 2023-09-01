@@ -7,7 +7,8 @@ import axios from "axios"
 
 function Ytvid({setClose,idvid,media})
 {
-    const vidUrl=`https://api.themoviedb.org/3/${media}/${idvid}/videos?${API_KEY}`
+     const API_KEY=import.meta.env.VITE_API_KEY
+    const vidUrl=`https://api.themoviedb.org/3/${media}/${idvid}/videos?api_key=${API_KEY}`
     // const[close,setClose]=useState(false)
     const[vids,setVids]=useState([])
 

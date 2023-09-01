@@ -85,8 +85,8 @@ function Row({title,fetch,isOrignal})
         <div className="all-items"  ref={slider} onScroll={scrollCheck} onMouseEnter={() => setHover(true) }
         onMouseLeave={() => setHover(false)}>
             {film.map((ele)=>((isOrignal && ele.poster_path)||(!isOrignal && ele.backdrop_path))&& 
-            (<div>
-              <div  key ={ele?.id} className={`${isOrignal ? "items-poster":"items-flat"}`} 
+            (<div key ={ele.id} >
+              <div  className={`${isOrignal ? "items-poster":"items-flat"}`} 
             style={{
                 backgroundImage:`url("https://image.tmdb.org/t/p/original${isOrignal?ele.poster_path:ele.backdrop_path}")`,
                 backgroundPosition:"center center",

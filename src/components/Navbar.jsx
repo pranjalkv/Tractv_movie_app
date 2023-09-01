@@ -7,6 +7,7 @@ import Modal from "./Modal";
 
 function Navbar({filmclick})
 {
+    const API_KEY=import.meta.env.VITE_API_KEY
      const ref = useRef()
 
     const[black,setblack]=useState(false)
@@ -17,7 +18,7 @@ function Navbar({filmclick})
 
      const navigate =useNavigate();
 
-    let searchapi=`https://api.themoviedb.org/3/search/multi?query=${sug}&${API_KEY}`
+    let searchapi=`https://api.themoviedb.org/3/search/multi?query=${sug}&api_key=${API_KEY}`
 
     function open_menu(e)
     {
@@ -78,7 +79,7 @@ function Navbar({filmclick})
         window.addEventListener("scroll",changeNav)
         window.addEventListener("resize",changeMenu)
         return()=>{window.removeEventListener("scroll",changeNav)
-        window.addEventListener("resize",changeMenu)}
+        window.removeEventListener("resize",changeMenu)}
     },[])
 
     useEffect(()=>{

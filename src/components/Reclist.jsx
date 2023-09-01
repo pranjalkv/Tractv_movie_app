@@ -7,8 +7,8 @@ import Errormsg from "./Errormsg";
 
 function Reclist ({mood})
 {
-   
-    const moodURL=`https://api.themoviedb.org/3/movie/${mood}/recommendations?${API_KEY}&page=2&language=en-US`;
+   const API_KEY=import.meta.env.VITE_API_KEY
+    const moodURL=`https://api.themoviedb.org/3/movie/${mood}/recommendations?api_key=${API_KEY}&page=2&language=en-US`;
     const navigateRec=useNavigate();
     const[reclist,setReclist]=useState([]);
     const[recHover,setRechover]=useState(-1);
@@ -33,7 +33,6 @@ function Reclist ({mood})
    {
     e.target.src="/images/noposter.jpg"
    }
-
     useEffect(()=>
     {
         async function fetchList()
@@ -49,6 +48,7 @@ function Reclist ({mood})
             setRecerr(true)
         }
     }
+    window.scrollTo(0,0);
         fetchList();
     },[moodURL])
 
