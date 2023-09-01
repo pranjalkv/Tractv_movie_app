@@ -12,8 +12,8 @@ dist
 dist-ssr
 *.local
 .env
-src\components\Genre
-src\components\lang
+src\components\Genre.jsx
+src\components\lang.jsx
 
 # Editor directories and files
 .vscode/*
